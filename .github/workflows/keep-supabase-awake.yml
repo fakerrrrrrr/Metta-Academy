@@ -1,0 +1,25 @@
+# Keeps the free Supabase project awake.
+# Supabase pauses free projects after about a week with too little database activity.
+# This reads one row every 2 days, using the public URL + anon key already in assets/js/config.js
+# (both are safe to be public). Nothing to set up: it starts working once config.js is filled in
+# and the site is on GitHub. You can also run it by hand: Actions → Keep Supabase awake → Run workflow.
+name: Keep Supabase awake
+on:
+  schedule:
+    - cron: '17 3 */2 * *'     # every 2 days, 10:17 Thailand time
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read one row from Supabase
+        run: |
+          URL=$(sed -n "s/.*SUPABASE_URL: *'\([^']*\)'.*/\1/p" assets/js/config.js)
+          KEY=$(sed -n "s/.*SUPABASE_ANON_KEY: *'\([^']*\)'.*/\1/p" assets/js/config.js)
+          if [ -z "$URL" ] || [ -z "$KEY" ]; then echo "config.js has no Supabase details yet (demo mode) - nothing to do"; exit 0; fi
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/rest/v1/settings?select=id&limit=1" -H "apikey: $KEY" -H "Authorization: Bearer $KEY")
+          echo "Supabase answered $code"
+          [ "$code" = "200" ]
