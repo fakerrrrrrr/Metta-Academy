@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /learn.html
+Disallow: /pay.html
+Disallow: /admin.html
+Disallow: /receipt.html
+Disallow: /login.html
+
+Sitemap: https://mettatattoo.com/sitemap.xml

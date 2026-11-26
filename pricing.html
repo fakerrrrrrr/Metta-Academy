@@ -2,33 +2,37 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/@supabase/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://i.ytimg.com https://*.fbcdn.net https://*.facebook.com; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://cdn.jsdelivr.net; frame-src https://player.vdocipher.com https://www.youtube-nocookie.com https://www.youtube.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://mettatattoo.com/pricing.html">
+<meta property="og:url" content="https://mettatattoo.com/pricing.html">
+<meta property="og:site_name" content="Metta Tattoo Academy">
+<meta property="og:locale" content="th_TH">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050505">
 <meta name="page-title" content="title_pricing">
 <title>ค่าเรียน · Metta Tattoo Academy</title>
-<meta name="description" content="จ่ายเต็ม ฿14,900 ดูได้ตลอดชีพ หรือผ่อน ฿1,800/เดือน 10 งวด เรียนจบสอบที่ร้าน สักได้จริง หรือคืนเงิน">
+<meta name="description" content="คอร์สออนไลน์ ฿14,900 จ่ายครั้งเดียว ดูได้ตลอดชีพ รวมคลิปใหม่ทุกคลิป · แพ็กเกจสอบรับใบประกาศที่ร้าน เริ่ม ฿9,900 · สักได้จริง หรือคืนเงิน">
 <meta property="og:title" content="ค่าเรียน · Metta Tattoo Academy">
-<meta property="og:description" content="จ่ายเต็ม ฿14,900 ดูได้ตลอดชีพ หรือผ่อน ฿1,800/เดือน 10 งวด เรียนจบสอบที่ร้าน สักได้จริง หรือคืนเงิน">
-<!-- Facebook/LINE preview. After the domain is live, change both image URLs to the full address, e.g. https://academy.mettatattoo.com/images/og.jpg -->
+<meta property="og:description" content="คอร์สออนไลน์ ฿14,900 จ่ายครั้งเดียว ดูได้ตลอดชีพ รวมคลิปใหม่ทุกคลิป · แพ็กเกจสอบรับใบประกาศที่ร้าน เริ่ม ฿9,900 · สักได้จริง หรือคืนเงิน">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/og.jpg">
+<meta property="og:image" content="https://mettatattoo.com/images/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="images/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://mettatattoo.com/images/og.jpg">
 <link rel="icon" href="images/logo-cat.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/academy.css">
+<link rel="stylesheet" href="assets/css/academy.css?v=70601ce6">
 </head>
 <body data-page="pricing">
 <div class="amb"></div>
 <header class="nav" id="nav"></header>
-
 <main>
 <section class="page-hero wrap">
   <div class="eyebrow fade-up" data-i18n="price_eyebrow"></div>
   <h1 class="section-title fade-up d1" data-i18n-html="price_title"></h1>
   <p class="lede fade-up d2" data-i18n="price_sub"></p>
-  
 </section>
 <section class="wrap" id="pricing">
   <div class="tracks-h reveal"><span data-i18n="tr_h"></span></div>
@@ -58,19 +62,23 @@
       </ul>
       <a href="pay.html?item=full" class="btn btn-gold btn-block" data-i18n="plan_full_cta"></a>
     </div>
-    <div class="plan reveal d1">
+    <div class="plan plan-inst reveal d1">
+      <span class="badge soon-badge" data-mo="off" data-i18n="coming_soon"></span>
       <h3 data-i18n="plan_inst"></h3>
       <div class="price"><span data-price="inst"></span><small data-i18n="per_month"></small></div>
       <div class="sub" id="planInstSub"></div>
-      <ul>
+      <ul data-mo="on">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_1"></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_2"></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_3"></span></li>
         <li class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span data-i18n="plan_inst_4"></span></li>
       </ul>
-      <a href="pay.html?item=installment" class="btn btn-ghost btn-block" data-i18n="plan_inst_cta"></a>
+      <div class="soon-box" data-mo="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p data-i18n="mo_why"></p></div>
+      <a href="pay.html?item=installment" class="btn btn-ghost btn-block" data-mo="on" data-i18n="plan_inst_cta"></a>
+      <span class="btn btn-ghost btn-block disabled" data-mo="off" aria-disabled="true" data-i18n="mo_cta_soon"></span>
     </div>
-    <div class="plan reveal d2">
+    <div class="plan plan-single reveal d2" id="planSingle">
+      <span class="badge soon-badge" data-i18n="coming_soon"></span>
       <h3 data-i18n="plan_single"></h3>
       <div class="price" id="singlePrice"></div>
       <div class="sub" data-i18n="plan_single_sub"></div>
@@ -79,6 +87,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_single_2"></span></li>
         <li class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span data-i18n="plan_single_3"></span></li>
       </ul>
+      <div class="soon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p data-i18n="sp_why"></p></div>
       <a href="course.html#special" class="btn btn-ghost btn-block" id="singleCta" data-i18n="plan_single_cta"></a>
     </div>
   </div>
@@ -114,7 +123,6 @@
     <p class="exam-model"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-i18n="exam_model"></span></p>
   </div>
 </section>
-
 <section class="section-pad" id="how">
   <div class="wrap">
     <div class="eyebrow reveal" data-i18n="how_eyebrow"></div>
@@ -127,7 +135,6 @@
     </div>
   </div>
 </section>
-
 <section class="section-pad alt-bg" id="guarantee">
   <div class="wrap">
     <div class="eyebrow reveal" data-i18n="gu_eyebrow"></div>
@@ -147,16 +154,14 @@
   <a class="next-step reveal" href="teacher.html"><span class="ne" data-i18n="next_eyebrow"></span><b data-i18n="next_teacher"></b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </section>
 </main>
-
 <footer id="footer"></footer>
-
 <script src="assets/js/config.js"></script>
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/access.js"></script>
-<script src="assets/js/course-data.js"></script>
-<script src="assets/js/api.js"></script>
-<script src="assets/js/ui.js"></script>
-<script src="assets/js/kits-data.js"></script>
-<script src="assets/js/pages/site.js"></script>
+<script src="assets/js/i18n.js?v=c8eaa8f3"></script>
+<script src="assets/js/access.js?v=682a442d"></script>
+<script src="assets/js/course-data.js?v=9a57b240"></script>
+<script src="assets/js/api.js?v=57bdb0ab"></script>
+<script src="assets/js/ui.js?v=18b582c7"></script>
+<script src="assets/js/kits-data.js?v=8b68fdde"></script>
+<script src="assets/js/pages/site.js?v=d5cd77aa"></script>
 </body>
 </html>
