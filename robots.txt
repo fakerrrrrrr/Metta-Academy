@@ -6,4 +6,4 @@ Disallow: /admin.html
 Disallow: /receipt.html
 Disallow: /login.html
 
-Sitemap: https://mettatattoo.com/sitemap.xml
+Sitemap: https://www.mettatattoo.com/sitemap.xml
