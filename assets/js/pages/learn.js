@@ -384,16 +384,31 @@
   }
 
   // WATERMARK OVER THE VIDEO: the student's name + phone, one line, in 3 places
-  // (top-left, centre, bottom-right). Anyone filming the screen with a phone films this too.
+  // (top-left of the player, centre, bottom-centre — the bottom one fainter). Kru Geeno films
+  // upright (9:16), so the text is sized to fit across that middle strip of picture.
+  // Anyone filming the screen films this too.
+  var VIDEO_ASPECT = 9 / 16;   // width ÷ height of the lesson videos (upright phone video)
+  var markRO = null;
   function centreMark() {
     var pr = st.profile || {}, who = esc([pr.full_name || pr.email, pr.phone].filter(Boolean).join(' · '));
-    return '<div class="cwm" aria-hidden="true"><span class="w-tl">' + who + '</span><span class="w-mid" id="cwm">' + who + '</span><span class="w-br">' + who + '</span></div>' +
+    return '<div class="cwm" aria-hidden="true" data-len="' + who.length + '"><span class="w-tl">' + who + '</span><span class="w-mid" id="cwm">' + who + '</span><span class="w-bc">' + who + '</span></div>' +
       '<button class="fs-btn" id="fsBtn" type="button" aria-label="' + esc(t('fullscreen')) + '" title="' + esc(t('fullscreen')) + '">' + FS_ON + '</button>';
+  }
+  function fitMark() {
+    var p = document.getElementById('player'), m = p && p.querySelector('.cwm'); if (!m) return;
+    var W = p.clientWidth, H = p.clientHeight; if (!W || !H) return;
+    var w = Math.min(W, H * VIDEO_ASPECT), h = Math.min(H, W / VIDEO_ASPECT);
+    var len = +m.getAttribute('data-len') || 24;
+    var fs = Math.max(10, Math.min(28, (w * 0.92) / (len * 0.54)));   // as big as fits on one line
+    m.style.fontSize = fs + 'px';
   }
   var FS_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
   var FS_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
   function startCentreMark() {
     var b = document.getElementById('fsBtn'); if (b) b.onclick = toggleFull;
+    fitMark();
+    if (!markRO && 'ResizeObserver' in window) { markRO = new ResizeObserver(fitMark); markRO.observe(document.getElementById('player')); }
+    else if (!markRO) { markRO = true; addEventListener('resize', fitMark); }
   }
   function isFull() { var p = document.getElementById('player'); return !!(document.fullscreenElement || document.webkitFullscreenElement || (p && p.classList.contains('pfull'))); }
   function toggleFull() {
@@ -407,7 +422,7 @@
     else { p.classList.add('pfull'); document.body.classList.add('pfull-on'); }   // iPhone: fill the screen instead
     setTimeout(fsIcon, 60);
   }
-  function fsIcon() { var b = document.getElementById('fsBtn'); if (b) b.innerHTML = isFull() ? FS_OFF : FS_ON; }
+  function fsIcon() { var b = document.getElementById('fsBtn'); if (b) b.innerHTML = isFull() ? FS_OFF : FS_ON; setTimeout(fitMark, 80); }
   document.addEventListener('fullscreenchange', fsIcon); document.addEventListener('webkitfullscreenchange', fsIcon);
   document.addEventListener('keydown', function (e) {
     var p = document.getElementById('player');
