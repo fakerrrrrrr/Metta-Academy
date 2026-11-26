@@ -346,8 +346,11 @@
       if (my !== playToken || !p.isConnected) return;   // user clicked another lesson or left the page meanwhile
       seen[l.id] = 1; try { localStorage.setItem(SEEN_KEY, JSON.stringify(seen)); } catch (e) { /* ignore */ }
       if (r.kind === 'vdocipher') {
+        // No full-screen inside the player itself: our own button makes the whole box full-screen,
+        // so the centre watermark stays on top of the video even in full-screen.
         p.innerHTML = '<iframe src="https://player.vdocipher.com/v2/?otp=' + encodeURIComponent(r.otp) + '&playbackInfo=' + encodeURIComponent(r.playbackInfo) +
-          '" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="' + esc(UI.pick(l, 'title')) + '"></iframe>';
+          '" allow="encrypted-media; picture-in-picture" title="' + esc(UI.pick(l, 'title')) + '"></iframe>' + centreMark();
+        startCentreMark();
       } else demoPlayer(p, l, r);
       renderList(); renderStatus();
     } catch (e) {
@@ -368,8 +371,8 @@
     lastDemo = { l: l, r: r };
     p.innerHTML = '<div class="demo-video"><div class="art"></div><span class="tag">' + esc(t('demo_player_tag')) + '</span>' +
       '<div class="state" style="background:none">' + ICON.playCircle.replace('<svg', '<svg class="big"') + '<h3>' + esc(UI.pick(l, 'title')) + '</h3><p>' + esc(t('demo_player_p')) + '</p></div>' +
-      '<span class="vwm" id="wm1">' + esc(r.watermark) + '</span><span class="vwm faint" id="wm2">' + esc(r.email) + '</span>' +
-      '<div class="bar"><span>0:00</span><div class="track"><i></i></div><span>' + (l.duration_min || 10) + ':00</span></div></div>';
+      '<div class="bar"><span>0:00</span><div class="track"><i></i></div><span>' + (l.duration_min || 10) + ':00</span></div></div>' + centreMark();
+    startCentreMark();
     function move() {
       ['wm1', 'wm2'].forEach(function (id) {
         var w = document.getElementById(id); if (!w) return;
@@ -379,6 +382,37 @@
     // place once, then drift slowly to a new spot (no jumping — calm to watch, still never in one fixed place)
     move(); setTimeout(move, 60); wmTimer = setInterval(move, 24000);
   }
+
+  // WATERMARK OVER THE VIDEO: the student's name + phone, one line, in 3 places
+  // (top-left, centre, bottom-right). Anyone filming the screen with a phone films this too.
+  function centreMark() {
+    var pr = st.profile || {}, who = esc([pr.full_name || pr.email, pr.phone].filter(Boolean).join(' · '));
+    return '<div class="cwm" aria-hidden="true"><span class="w-tl">' + who + '</span><span class="w-mid" id="cwm">' + who + '</span><span class="w-br">' + who + '</span></div>' +
+      '<button class="fs-btn" id="fsBtn" type="button" aria-label="' + esc(t('fullscreen')) + '" title="' + esc(t('fullscreen')) + '">' + FS_ON + '</button>';
+  }
+  var FS_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var FS_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  function startCentreMark() {
+    var b = document.getElementById('fsBtn'); if (b) b.onclick = toggleFull;
+  }
+  function isFull() { var p = document.getElementById('player'); return !!(document.fullscreenElement || document.webkitFullscreenElement || (p && p.classList.contains('pfull'))); }
+  function toggleFull() {
+    var p = document.getElementById('player');
+    if (isFull()) {
+      if (p.classList.contains('pfull')) { p.classList.remove('pfull'); document.body.classList.remove('pfull-on'); }
+      else if (document.exitFullscreen) document.exitFullscreen(); else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    } else if (p.requestFullscreen) {
+      p.requestFullscreen().then(function () { try { screen.orientation.lock('landscape').catch(function () {}); } catch (e) { /* not supported */ } }).catch(function () { p.classList.add('pfull'); document.body.classList.add('pfull-on'); fsIcon(); });
+    } else if (p.webkitRequestFullscreen) p.webkitRequestFullscreen();
+    else { p.classList.add('pfull'); document.body.classList.add('pfull-on'); }   // iPhone: fill the screen instead
+    setTimeout(fsIcon, 60);
+  }
+  function fsIcon() { var b = document.getElementById('fsBtn'); if (b) b.innerHTML = isFull() ? FS_OFF : FS_ON; }
+  document.addEventListener('fullscreenchange', fsIcon); document.addEventListener('webkitfullscreenchange', fsIcon);
+  document.addEventListener('keydown', function (e) {
+    var p = document.getElementById('player');
+    if (e.key === 'Escape' && p && p.classList.contains('pfull')) { p.classList.remove('pfull'); document.body.classList.remove('pfull-on'); fsIcon(); }
+  });
   // Light deterrents on top of DRM: no right-click / drag on the player.
   ['contextmenu', 'dragstart'].forEach(function (ev) { document.getElementById('player').addEventListener(ev, function (e) { e.preventDefault(); }); });
 
