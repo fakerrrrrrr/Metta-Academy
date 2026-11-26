@@ -73,7 +73,7 @@
 
     function personRow(s, extra) {
       var p = s.profile;
-      return '<tr class="click" data-stu="' + esc(p.id) + '"><td>' + esc(p.full_name || p.email) + '<span class="sub">' + esc(p.phone || p.email) + '</span></td><td>' + extra + '</td><td>' + planChip(s) + '</td></tr>';
+      return '<tr class="click" data-stu="' + esc(p.id) + '"><td>' + esc(p.full_name || p.email) + '<span class="sub">' + esc(p.phone || p.email) + '</span></td><td><span class="due">' + extra + '</span></td><td>' + planChip(s) + '</td></tr>';
     }
     var examStudents = students.filter(function (s) { var b = lastExam(s); return b && b.status !== 'passed'; })
       .sort(function (a, b) { return (lastExam(a).exam_date || '9') < (lastExam(b).exam_date || '9') ? -1 : 1; });
@@ -87,9 +87,9 @@
       (pending.length ? '<div class="alert info">' + ICON.clock + '<div class="grow">' + esc(t('ov_pending', { n: pending.length })) + '</div><button class="btn btn-gold btn-sm" data-go="slips">' + esc(t('ov_check_now')) + '</button></div>' : '') +
       '<div class="grid-2" style="margin-top:1rem">' +
       '<div><h3 class="card-h" style="margin-bottom:.8rem">' + esc(t('ov_overdue')) + '</h3>' +
-      (overdue.length ? '<div class="tbl-wrap"><table class="tbl" style="min-width:0"><tbody>' + overdue.map(function (s) { return personRow(s, dueText(s.plan)); }).join('') + '</tbody></table></div>' : '<div class="card empty">' + esc(t('ov_none_overdue')) + '</div>') + '</div>' +
+      (overdue.length ? '<div class="tbl-wrap"><table class="tbl tbl-stack tbl-ppl" style="min-width:0"><tbody>' + overdue.map(function (s) { return personRow(s, dueText(s.plan)); }).join('') + '</tbody></table></div>' : '<div class="card empty">' + esc(t('ov_none_overdue')) + '</div>') + '</div>' +
       '<div><h3 class="card-h" style="margin-bottom:.8rem">' + esc(t('ov_soon')) + '</h3>' +
-      (soon.length ? '<div class="tbl-wrap"><table class="tbl" style="min-width:0"><tbody>' + soon.map(function (s) { return personRow(s, dueText(s.plan)); }).join('') + '</tbody></table></div>' : '<div class="card empty">' + esc(t('ov_none_soon')) + '</div>') + '</div></div>' +
+      (soon.length ? '<div class="tbl-wrap"><table class="tbl tbl-stack tbl-ppl" style="min-width:0"><tbody>' + soon.map(function (s) { return personRow(s, dueText(s.plan)); }).join('') + '</tbody></table></div>' : '<div class="card empty">' + esc(t('ov_none_soon')) + '</div>') + '</div></div>' +
       (examStudents.length ? '<h3 class="card-h" style="margin:1.6rem 0 .8rem">' + esc(t('adm_ex_list')) + '</h3><div class="tbl-wrap"><table class="tbl" style="min-width:0"><tbody>' +
         examStudents.map(function (s) { var b = lastExam(s); return personRow(s, esc(t('item_exam', { n: b.days })) + '<span class="sub">' + examChip(b) + (b.exam_date && b.status !== 'passed' ? ' ' + esc(UI.date(b.exam_date)) : '') + '</span>'); }).join('') + '</tbody></table></div>' : '');
   }
@@ -187,14 +187,14 @@
     });
     var box = document.getElementById('stuBody');
     if (!list.length) { box.innerHTML = '<div class="card empty">' + esc(t('stu_empty')) + '</div>'; return; }
-    box.innerHTML = '<div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + esc(t('col_student')) + '</th><th>' + esc(t('col_contact')) + '</th><th>' + esc(t('col_plan')) + '</th><th>' + esc(t('col_progress')) + '</th><th>' + esc(t('col_next_due')) + '</th><th>' + esc(t('col_status')) + '</th></tr></thead><tbody>' +
+    box.innerHTML = '<div class="tbl-wrap"><table class="tbl tbl-stack tbl-stu"><thead><tr><th>' + esc(t('col_student')) + '</th><th>' + esc(t('col_contact')) + '</th><th>' + esc(t('col_plan')) + '</th><th>' + esc(t('col_progress')) + '</th><th>' + esc(t('col_next_due')) + '</th><th>' + esc(t('col_status')) + '</th></tr></thead><tbody>' +
       list.map(function (s) {
         var p = s.profile, pl = s.plan;
         return '<tr class="click" data-stu="' + esc(p.id) + '"><td>' + esc(p.full_name || '—') + '<span class="sub">' + esc(p.email) + '</span></td>' +
-          '<td>' + esc(p.phone || '—') + (p.line_id ? '<span class="sub">LINE: ' + esc(p.line_id) + '</span>' : '') + '</td>' +
-          '<td>' + esc(!pl.plan ? '—' : pl.plan === 'full' ? t('plan_full') : t('plan_inst')) + '</td>' +
-          '<td>' + (pl.plan ? segs(s) + '<span class="sub">' + (pl.plan === 'full' ? esc(t('lifetime')) : pl.paid + '/' + pl.count) + '</span>' : '—') + '</td>' +
-          '<td>' + dueText(pl) + '</td><td>' + planChip(s) + '</td></tr>';
+          '<td data-k="' + esc(t('col_contact')) + '">' + esc(p.phone || '—') + (p.line_id ? '<span class="sub">LINE: ' + esc(p.line_id) + '</span>' : '') + '</td>' +
+          '<td data-k="' + esc(t('col_plan')) + '">' + esc(!pl.plan ? '—' : pl.plan === 'full' ? t('plan_full') : t('plan_inst')) + '</td>' +
+          '<td data-k="' + esc(t('col_progress')) + '">' + (pl.plan ? '<span class="prog">' + segs(s) + '<span class="sub">' + (pl.plan === 'full' ? esc(t('lifetime')) : pl.paid + '/' + pl.count) + '</span></span>' : '—') + '</td>' +
+          '<td data-k="' + esc(t('col_next_due')) + '"><span class="due">' + dueText(pl) + '</span></td><td>' + planChip(s) + '</td></tr>';
       }).join('') + '</tbody></table></div><p class="faint" style="font-size:.8rem;margin-top:.7rem">' + esc(t('stu_count', { n: list.length })) + '</p>';
   }
 

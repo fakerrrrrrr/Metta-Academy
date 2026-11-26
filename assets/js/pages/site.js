@@ -76,6 +76,37 @@
   }
   renderSocials();
   document.addEventListener('langchange', renderSocials);
+
+  // STUDENT WORK — Kru Geeno posts students' tattoos on the shop's Facebook page.
+  // The page's feed is loaded only when the section scrolls into view; if Facebook is blocked
+  // (ad blocker, no internet) the big button underneath still opens the page.
+  (function studentWork() {
+    var sec = $('students'), url = C.STUDENT_WORK_FB || C.FACEBOOK;
+    if (!sec || !url) return;
+    sec.hidden = false;
+    function labels() {
+      document.querySelectorAll('[data-sw-link]').forEach(function (a) { a.href = url; a.innerHTML = UI.ICON.fb + '<span>' + esc(t('sw_btn')) + '</span>' + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'; });
+      document.querySelectorAll('[data-sw-link-ph]').forEach(function (a) { a.href = url; a.innerHTML = '<span class="sw-ph-ic">' + UI.ICON.fb + '</span><b>' + esc(t('sw_ph')) + '</b>'; });
+    }
+    labels(); document.addEventListener('langchange', labels);
+    var box = $('swFrame'), done = false;
+    function load() {
+      if (done) return; done = true;
+      var w = Math.max(180, Math.min(500, Math.floor(box.clientWidth || 340)));
+      var h = Math.max(300, Math.floor(box.clientHeight || 420));
+      var f = document.createElement('iframe');
+      f.title = 'Facebook · Metta Tattoo'; f.loading = 'lazy'; f.width = w; f.height = h;
+      f.setAttribute('scrolling', 'no'); f.setAttribute('frameborder', '0'); f.setAttribute('allow', 'encrypted-media; picture-in-picture; web-share');
+      f.src = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(url) + '&tabs=timeline&width=' + w + '&height=' + h +
+        '&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&locale=' + (UI.lang && UI.lang() === 'en' ? 'en_US' : 'th_TH');
+      f.onload = function () { box.classList.add('loaded'); };
+      box.appendChild(f);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); load(); } }, { rootMargin: '300px' });
+      io.observe(sec);
+    } else load();
+  })();
   if ($('faqPhone')) { $('faqPhone').href = 'tel:' + (C.PHONE_INTL || ''); $('faqPhone').innerHTML = UI.ICON.phone + '<span>' + esc(C.PHONE || '') + '</span>'; }
 
   function minSpecial() { var p = specials().map(function (l) { return l.price; }).filter(function (x) { return x > 0; }); return p.length ? Math.min.apply(null, p) : 0; }

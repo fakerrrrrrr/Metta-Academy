@@ -85,7 +85,7 @@
       html += opt('lesson', t('plan_single'), t('opt_lesson_d'), t('from') + ' ' + UI.baht(Math.min.apply(null, buy.map(function (l) { return l.price; }))), lsel);
     }
     if (canExam()) html += opt('exam', t('opt_exam_h'), t('opt_exam_d'), t('from') + ' ' + UI.baht(Math.min.apply(null, exams().map(function (x) { return x.price; }))),
-      '<div class="extra">' + examChips(false) + '</div>', 'exam');
+      '<div class="extra">' + examChips(false) + '</div>', 'opt-exam');
     else if ((st.exams || []).some(function (x) { return x.status !== 'passed'; })) html += '<div class="alert ok">' + ICON.check + '<div class="grow">' + esc(t('pay_exam_have')) + '</div></div>';
     if (!canFull() && !canInst() && !buy.length && !canExam() && !(e && e.plan === 'full' || plan.complete)) html += '<div class="empty">' + esc(t('pay_nothing')) + '</div>';
     box.innerHTML = html;

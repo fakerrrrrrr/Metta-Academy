@@ -155,7 +155,7 @@
     var right;
     if (s) {
       var initial = (p.full_name || p.email || '?').trim().charAt(0).toUpperCase();
-      right = (state.page !== 'learn' ? '<a href="learn.html" class="btn btn-gold nav-cta hide-sm" data-i18n="nav_classroom"></a>' : '') +
+      right = (state.page !== 'learn' ? '<a href="learn.html" class="btn btn-gold nav-cta nav-class" data-i18n="nav_classroom"></a>' : '') +
         '<div class="bell" id="bell"><button class="bell-btn" id="bellBtn" aria-haspopup="true" data-i18n-aria="nt_title">' + ICON.bell + '<span class="bell-n" id="bellN" hidden></span></button>' +
         '<div class="bell-menu" role="menu"><div class="bell-h"><b data-i18n="nt_title"></b><button id="bellAll" data-i18n="nt_read_all"></button></div><div class="bell-list" id="bellList"></div></div></div>' +
         '<div class="acct" id="acct"><button class="acct-btn" id="acctBtn" aria-haspopup="true" data-i18n-aria="nav_account">' + esc(initial) + '</button>' +
@@ -167,7 +167,7 @@
         (isAdmin ? '<a href="admin.html">' + ICON.gear + '<span data-i18n="nav_admin"></span></a>' : '') +
         '<button id="logoutBtn">' + ICON.out + '<span data-i18n="nav_logout"></span></button></div></div>';
     } else {
-      right = '<a href="login.html" class="btn btn-ghost nav-cta hide-sm" data-i18n="nav_login"></a>' +
+      right = '<a href="login.html" class="btn btn-ghost nav-cta nav-login" data-i18n-aria="nav_login">' + ICON.user + '<span data-i18n="nav_login"></span></a>' +
         '<a href="pricing.html" class="btn btn-gold nav-cta" data-i18n="nav_enroll"></a>';
     }
     var html = '<div class="nav-inner"><a href="index.html" class="nav-logo" aria-label="Metta Tattoo Academy"><span class="brand-cat" aria-hidden="true"></span>' +

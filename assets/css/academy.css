@@ -108,12 +108,13 @@ html[lang=th] .nav-links a{font-size:.88rem;letter-spacing:0;text-transform:none
   .nav-logo .wm i{display:none}.nav-logo b{font-size:.88rem;letter-spacing:.22em}
   .brand-cat{width:28px;height:28px}
   .nav-cta.hide-sm{display:none}
-  .nav-login{width:42px;height:42px;padding:0;border-radius:50%;flex:none}
-  .nav-login span{display:none}.nav-login svg{display:block}
+  .nav-login{padding:.6rem .8rem;border-color:rgba(212,175,55,.55);color:var(--gold-bright)}
   .nav-cta{padding:.65rem .95rem}
 }
 @media(max-width:400px){
   .nav-logo .wm{display:none}
+  .lang-toggle button{padding:.3rem .45rem;min-width:34px}
+  .nav-right{gap:.35rem}
   .lang-toggle button{padding:.32rem .5rem}
 }
 
@@ -1258,7 +1259,8 @@ html[lang=th] .journey-h h2{font-family:var(--sans);font-weight:700}
 @media(max-width:1000px){.journey{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.4rem;margin:0 calc(-1 * clamp(1rem,5vw,3.5rem));padding-left:clamp(1rem,5vw,3.5rem);padding-right:clamp(1rem,5vw,3.5rem);scroll-padding:0 clamp(1rem,5vw,3.5rem);scrollbar-width:none}.journey::-webkit-scrollbar{display:none}.jcard{flex:0 0 min(62vw,230px);scroll-snap-align:start;min-height:230px}}
 
 /* bigger, friendlier player column + lesson list */
-.classroom{grid-template-columns:minmax(0,1.75fr) minmax(320px,1fr);gap:1.6rem;margin-top:1.8rem}
+@media(min-width:1001px){.classroom{grid-template-columns:minmax(0,1.75fr) minmax(320px,1fr);gap:1.6rem}}
+.classroom{margin-top:1.8rem}
 .player{border-radius:18px;border-color:var(--line-strong);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(212,175,55,.05)}
 .lesson-info{margin-top:1.3rem;padding:1.3rem 1.4rem;border:1px solid var(--line);border-radius:16px;background:var(--grad-card)}
 .lesson-info .now{display:flex;align-items:center;gap:.55rem;font-size:.75rem;color:var(--gold-2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
@@ -1375,7 +1377,7 @@ html[lang=th] .tracks-h span{letter-spacing:.08em;font-size:.95rem;text-transfor
 .echip:hover{border-color:var(--line-strong)}
 .echip.on{border-color:var(--gold);background:rgba(212,175,55,.12);color:var(--gold-bright)}
 .echip.on b{color:var(--gold-bright)}
-.opt.exam .op{color:var(--gold-bright)}
+.opt.opt-exam .op{color:var(--gold-bright)}
 
 /* classroom: certificate exam card */
 .ex-card{display:flex;gap:1rem;align-items:center;margin-top:.8rem;padding:1rem 1.2rem;border:1px solid var(--line-strong);border-radius:16px;background:linear-gradient(110deg,rgba(212,175,55,.1),rgba(10,9,8,.6) 60%)}
@@ -1648,3 +1650,64 @@ html[lang=th] .chip{font-size:.8rem}
 .player:-webkit-full-screen{width:100vw;height:100vh;aspect-ratio:auto;border:0;border-radius:0}
 .player.pfull{position:fixed!important;inset:0;z-index:5000;width:100vw;height:100vh;height:100dvh;min-height:0;aspect-ratio:auto;border:0;border-radius:0}
 body.pfull-on{overflow:hidden}
+
+/* ===================== phone & tablet fixes (Nov 2026) ===================== */
+/* phones: keep the top bar on one line — cat logo only, calmer button text */
+@media(max-width:480px){
+  .nav-logo .wm{display:none}
+  .nav-cta{text-transform:none;letter-spacing:.02em;font-size:.8rem;padding:.6rem .85rem}
+  .bell-btn,.acct-btn{width:40px;height:40px}
+}
+/* very narrow phones (under 375px): "Log in" becomes a round icon so the bar fits */
+@media(max-width:374px){
+  .nav-class{display:none}
+  .nav-login{width:40px;height:40px;padding:0;border-radius:50%;flex:none}
+  .nav-login span{display:none}.nav-login svg{display:block}
+}
+/* iPhone zooms the page in when a box's text is under 16px — keep form boxes at 16px on touch screens */
+@media(max-width:1000px),(hover:none){
+  .input,.field input,.field select,.field textarea,input[type=text],input[type=email],input[type=password],input[type=tel],select,textarea{font-size:16px}
+}
+/* classroom on phones & tablets: welcome box, then straight to the video and the lesson list */
+@media(max-width:1000px){
+  .cl-wrap{display:flex;flex-direction:column}
+  .cl-wrap>#hero{order:1}
+  .cl-wrap>#alerts{order:2}
+  .cl-wrap>.classroom{order:3;margin-top:1.2rem}
+  .cl-wrap>#journeyWrap{order:4}
+  .cl-wrap>#status{order:5;margin-top:1.4rem}
+  .cl-wrap>#exam{order:6}
+  .cl-hero{padding:1.3rem 1.2rem}
+  .cl-tag{display:none}
+  .lessons{margin-top:.4rem}
+}
+/* classroom on computers / iPad landscape: stats under the welcome box, then the video; the lesson
+   list scrolls inside its own box next to the video */
+@media(min-width:1001px){
+  .cl-wrap{display:flex;flex-direction:column}
+  .cl-wrap>#hero{order:1}.cl-wrap>#status{order:2;margin-top:1rem}.cl-wrap>#alerts{order:3}
+  .cl-wrap>.classroom{order:4}.cl-wrap>#journeyWrap{order:5;margin-top:2.4rem}.cl-wrap>#exam{order:6}
+  .classroom .lessons{position:sticky;top:6.4rem;max-height:calc(100vh - 7.6rem);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(212,175,55,.35) transparent}
+  .classroom .lessons-head{position:sticky;top:0;z-index:2;background:#0e0d0b}
+}
+/* help button: smaller on phones so it covers less */
+@media(max-width:600px){
+  .fab{right:.8rem;bottom:.8rem}
+  body.has-tabbar .fab{bottom:4.9rem}
+  .fab-main{width:48px;height:48px}
+  .fab-main svg{width:21px;height:21px}
+}
+
+/* admin on phones: students as cards; clip names get their own line in the lesson list */
+@media(max-width:640px){
+  table.tbl-stu tbody tr>td:first-child,table.tbl-ppl tbody tr>td:first-child{display:block;text-align:left;font-weight:500;padding-bottom:.35rem}
+  table.tbl-stu td .sub,table.tbl-ppl td:first-child .sub{text-align:left}
+  table.tbl-stu td .prog{display:flex;flex-direction:column;align-items:flex-end;gap:.2rem}
+  table.tbl-stu td .prog .segs{width:120px;margin:0}
+  table.tbl-ppl td{text-align:left}
+  table.tbl-stack td .due .sub{display:block}
+  .lad-row{flex-wrap:wrap;align-items:flex-start;gap:.5rem .6rem}
+  .lad-row .tt{flex:1 1 100%}
+  .lad-row .chips{flex:1;justify-content:flex-start}
+  .lad-row .btn{margin-left:auto}
+}
