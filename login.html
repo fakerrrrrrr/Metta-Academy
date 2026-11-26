@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="noindex">
+<meta name="page-title" content="title_login">
+<title>เข้าสู่ระบบ · Metta Tattoo Academy</title>
+<link rel="icon" href="images/logo-cat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/academy.css">
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main class="auth">
+  <aside class="auth-side"><div>
+    <div class="eyebrow" data-i18n="auth_side_eyebrow"></div>
+    <blockquote style="margin-top:1rem" data-i18n="auth_quote"></blockquote>
+    <ul class="auth-perks">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="auth_b1"></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="auth_b2"></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="auth_b3"></span></li>
+    </ul>
+  </div></aside>
+  <section class="auth-main">
+    <div class="auth-box">
+      <div id="notice"></div>
+      <div class="tabs" role="tablist" id="authTabs">
+        <button type="button" data-mode="login" role="tab" data-i18n="tab_login"></button>
+        <button type="button" data-mode="register" role="tab" data-i18n="tab_register"></button>
+      </div>
+
+      <form class="form" id="loginForm" novalidate>
+        <h1 class="h-serif" style="font-size:1.7rem" data-i18n="login_h"></h1>
+        <p class="muted" style="margin-top:-.4rem" data-i18n="login_p"></p>
+        <label class="field"><span data-i18n="f_email"></span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="field"><span data-i18n="f_password"></span><input type="password" name="password" autocomplete="current-password" required></label>
+        <div class="form-msg" id="loginMsg" role="alert"></div>
+        <button class="btn btn-gold btn-block" type="submit" data-i18n="login_btn"></button>
+        <button class="link" type="button" id="forgotLink" style="justify-self:center;font-size:.86rem" data-i18n="forgot_link"></button>
+      </form>
+
+      <form class="form" id="registerForm" novalidate hidden>
+        <h1 class="h-serif" style="font-size:1.7rem" data-i18n="reg_h"></h1>
+        <p class="muted" style="margin-top:-.4rem" data-i18n="reg_p"></p>
+        <label class="field"><span data-i18n="f_name"></span><input name="full_name" autocomplete="name" required></label>
+        <div class="row-2">
+          <label class="field"><span data-i18n="f_phone"></span><input name="phone" type="tel" autocomplete="tel" required></label>
+          <label class="field"><span data-i18n="f_line_opt"></span><input name="line_id"></label>
+        </div>
+        <label class="field"><span data-i18n="f_email"></span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="field"><span data-i18n="f_password"></span><input type="password" name="password" autocomplete="new-password" minlength="8" required><small data-i18n="f_password_hint"></small></label>
+        <label class="check"><input type="checkbox" name="agree" required><span data-i18n-html="reg_agree"></span></label>
+        <div class="form-msg" id="regMsg" role="alert"></div>
+        <button class="btn btn-gold btn-block" type="submit" data-i18n="reg_btn"></button>
+      </form>
+
+      <form class="form" id="forgotForm" novalidate hidden>
+        <h1 class="h-serif" style="font-size:1.6rem" data-i18n="forgot_h"></h1>
+        <p class="muted" data-i18n="forgot_p"></p>
+        <label class="field"><span data-i18n="f_email"></span><input type="email" name="email" autocomplete="email" required></label>
+        <div class="form-msg" id="forgotMsg" role="alert"></div>
+        <button class="btn btn-gold btn-block" type="submit" data-i18n="forgot_btn"></button>
+        <button class="link" type="button" data-mode="login" style="justify-self:center;font-size:.86rem" data-i18n="back_login"></button>
+      </form>
+
+      <form class="form" id="newPwForm" novalidate hidden>
+        <h1 class="h-serif" style="font-size:1.6rem" data-i18n="newpw_h"></h1>
+        <label class="field"><span data-i18n="f_new_password"></span><input type="password" name="password" autocomplete="new-password" minlength="8" required></label>
+        <div class="form-msg" id="newPwMsg" role="alert"></div>
+        <button class="btn btn-gold btn-block" type="submit" data-i18n="save"></button>
+      </form>
+
+      <div class="demo-logins" id="demoLogins" hidden>
+        <p data-i18n="demo_logins"></p>
+        <div class="btns">
+          <button class="btn btn-ghost btn-sm" data-demo="student@metta.demo" data-i18n="demo_as_student"></button>
+          <button class="btn btn-ghost btn-sm" data-demo="mint@metta.demo" data-i18n="demo_as_overdue"></button>
+          <button class="btn btn-ghost btn-sm" data-demo="gino@metta.demo" data-i18n="demo_as_admin"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/access.js"></script>
+<script src="assets/js/course-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="noindex">
+<meta name="page-title" content="title_pay">
+<title>ชำระเงิน · Metta Tattoo Academy</title>
+<link rel="icon" href="images/logo-cat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/academy.css">
+</head>
+<body>
+<div class="amb"></div>
+<header class="nav" id="nav"></header>
+<main class="app">
+  <div class="wrap">
+    <div class="page-head"><div><div class="eyebrow" data-i18n="pay_eyebrow"></div><h1 data-i18n="pay_h"></h1></div></div>
+    <div id="payAlerts"></div>
+    <div class="pay-grid" id="payGrid">
+      <div class="card">
+        <div class="eyebrow" style="margin-bottom:1rem" data-i18n="pay_step1"></div>
+        <div class="form" id="options"></div>
+      </div>
+      <div class="card" id="right">
+        <div class="qr-card" id="qrCard"></div>
+        <form class="form" id="slipForm" style="margin-top:1.4rem" novalidate>
+          <div class="eyebrow" data-i18n="pay_step3"></div>
+          <label class="drop" id="drop">
+            <input type="file" accept="image/*" id="slipFile" class="sr-only">
+            <span id="dropInner"></span>
+          </label>
+          <label class="field"><span data-i18n="pay_note"></span><input name="note" maxlength="200" data-i18n-ph="pay_note_ph"></label>
+          <div class="form-msg" id="slipMsg" role="alert"></div>
+          <button class="btn btn-gold btn-block" type="submit" id="sendBtn" data-i18n="pay_send"></button>
+          <p class="faint" style="font-size:.8rem;text-align:center" data-i18n="pay_after"></p>
+        </form>
+      </div>
+    </div>
+
+    <section id="history" style="margin-top:3rem">
+      <div class="eyebrow" data-i18n="pay_history"></div>
+      <div style="margin-top:1rem" id="historyBox"></div>
+    </section>
+  </div>
+</main>
+<footer id="footer"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/access.js"></script>
+<script src="assets/vendor/qr.js"></script>
+<script src="assets/js/promptpay.js"></script>
+<script src="assets/js/course-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/pages/pay.js"></script>
+</body>
+</html>

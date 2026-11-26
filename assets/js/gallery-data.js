@@ -1,0 +1,372 @@
+/* Studio work shown on the academy home page (photos from the Metta Tattoo site).
+   To use new photos: put them in images/gallery/ and add a line here. */
+window.METTA_GALLERY = [
+{
+"src": "images/work/01.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Starry Mind",
+"title_th": "จิตใต้ดวงดาว"
+},
+{
+"src": "images/work/02.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Oni Warrior",
+"title_th": "นักรบโอนิ"
+},
+{
+"src": "images/work/03.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Wildflower Muse",
+"title_th": "หญิงสาวกับใบไม้"
+},
+{
+"src": "images/work/04.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Dusk Blossoms",
+"title_th": "ดอกไม้ยามพลบ"
+},
+{
+"src": "images/work/05.webp",
+"cat": "geometric",
+"cat_en": "Geometric",
+"cat_th": "เรขาคณิต",
+"title_en": "Time & Compass",
+"title_th": "เวลาและเข็มทิศ"
+},
+{
+"src": "images/work/06.webp",
+"cat": "fineline",
+"cat_en": "Fine-Line",
+"cat_th": "ลายเส้นบาง",
+"title_en": "Red Dragon",
+"title_th": "มังกรแดง"
+},
+{
+"src": "images/work/07.webp",
+"cat": "polynesian",
+"cat_en": "Polynesian",
+"cat_th": "โพลินีเซียน",
+"title_en": "Polynesian Band",
+"title_th": "ลายโพลินีเซียนรอบแขน"
+},
+{
+"src": "images/work/08.webp",
+"cat": "micro",
+"cat_en": "Micro",
+"cat_th": "ไมโคร",
+"title_en": "Mali",
+"title_th": "มะลิ"
+},
+{
+"src": "images/work/09.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Melting Mona Lisa",
+"title_th": "โมนาลิซ่าละลาย"
+},
+{
+"src": "images/work/10.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Blue Hannya",
+"title_th": "ฮันเนียสีคราม"
+},
+{
+"src": "images/work/11.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Aces & Angels",
+"title_th": "ไพ่และเทวดา"
+},
+{
+"src": "images/work/12.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Temple Garden",
+"title_th": "สวนวัด"
+},
+{
+"src": "images/work/13.webp",
+"cat": "polynesian",
+"cat_en": "Polynesian",
+"cat_th": "โพลินีเซียน",
+"title_en": "Tribal Shoulder",
+"title_th": "ลายไทรบัลหัวไหล่"
+},
+{
+"src": "images/work/14.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Kintsugi Bloom",
+"title_th": "ซ่อมด้วยทอง"
+},
+{
+"src": "images/work/15.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Crimson Oni",
+"title_th": "โอนิแดงเพลิง"
+},
+{
+"src": "images/work/16.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Adorned Gaze",
+"title_th": "สายตาประดับอัญมณี"
+},
+{
+"src": "images/work/17.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Butterfly Portrait",
+"title_th": "ภาพหญิงสาวกับผีเสื้อ"
+},
+{
+"src": "images/work/18.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Radiant Buddha",
+"title_th": "พระพุทธรูปสีรุ้ง"
+},
+{
+"src": "images/work/19.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Tengu Unmasked",
+"title_th": "เท็งงุถอดหน้ากาก"
+},
+{
+"src": "images/work/20.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Winged Halo",
+"title_th": "ปีกและมงกุฎหนาม"
+},
+{
+"src": "images/work/21.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Blue Peony",
+"title_th": "โบตั๋นสีคราม"
+},
+{
+"src": "images/work/22.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Moon Guardian",
+"title_th": "นักรบสาวแห่งดวงจันทร์"
+},
+{
+"src": "images/work/23.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Samurai's Resolve",
+"title_th": "ปณิธานซามูไร"
+},
+{
+"src": "images/work/24.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Fallen Angel",
+"title_th": "เทวดาตกสวรรค์"
+},
+{
+"src": "images/work/25.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Framed Starry Night",
+"title_th": "ราตรีประดับกรอบ"
+},
+{
+"src": "images/work/26.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Hannya in Shadow",
+"title_th": "ฮันเนียเงาดำ"
+},
+{
+"src": "images/work/27.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Blue-Eyed Wolf",
+"title_th": "หมาป่าตาสีฟ้า"
+},
+{
+"src": "images/work/28.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Red Thread & Spider Lily",
+"title_th": "ด้ายแดงและดอกจิ้งจอก"
+},
+{
+"src": "images/work/29.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Armoured Muse",
+"title_th": "นักรบสาวเกราะแดง"
+},
+{
+"src": "images/work/30.webp",
+"cat": "micro",
+"cat_en": "Micro",
+"cat_th": "ไมโคร",
+"title_en": "Sun Child",
+"title_th": "เด็กแห่งตะวัน"
+},
+{
+"src": "images/work/31.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Songbird & Silk",
+"title_th": "นกน้อยกับด้ายไหม"
+},
+{
+"src": "images/work/32.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Grey Waves",
+"title_th": "คลื่นขาวดำ"
+},
+{
+"src": "images/work/33.webp",
+"cat": "blackgray",
+"cat_en": "Black & Gray",
+"cat_th": "ขาวดำ",
+"title_en": "Beanie Girl",
+"title_th": "สาวหมวกไหมพรม"
+},
+{
+"src": "images/work/34.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Error Heart",
+"title_th": "หัวใจ ERROR"
+},
+{
+"src": "images/work/35.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Geisha & Chrysanthemum",
+"title_th": "เกอิชาและเบญจมาศ"
+},
+{
+"src": "images/work/36.webp",
+"cat": "fineline",
+"cat_en": "Fine-Line",
+"cat_th": "ลายเส้นบาง",
+"title_en": "Skull Spider",
+"title_th": "แมงมุมกะโหลก"
+},
+{
+"src": "images/work/37.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Split Portrait",
+"title_th": "ใบหน้าแยกส่วน"
+},
+{
+"src": "images/work/38.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Samurai & Sakura",
+"title_th": "ซามูไรและซากุระ"
+},
+{
+"src": "images/work/39.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Water Spirit",
+"title_th": "วิญญาณแห่งน้ำ"
+},
+{
+"src": "images/work/40.webp",
+"cat": "color",
+"cat_en": "Color",
+"cat_th": "สี",
+"title_en": "Serpent & Lily",
+"title_th": "งูและดอกลิลลี่"
+},
+{
+"src": "images/work/41.webp",
+"cat": "japanese",
+"cat_en": "Japanese",
+"cat_th": "ญี่ปุ่น",
+"title_en": "Hannya Muse",
+"title_th": "สาวฮันเนีย"
+},
+{
+"src": "images/work/42.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Butterfly Cover-Up",
+"title_th": "กลบลายผีเสื้อ"
+},
+{
+"src": "images/work/43.webp",
+"cat": "geometric",
+"cat_en": "Geometric",
+"cat_th": "เรขาคณิต",
+"title_en": "Sacred Geometry Swallow",
+"title_th": "นกนางแอ่นเรขาคณิต"
+},
+{
+"src": "images/work/44.webp",
+"cat": "geometric",
+"cat_en": "Geometric",
+"cat_th": "เรขาคณิต",
+"title_en": "Thorn Crown",
+"title_th": "มงกุฎหนาม"
+},
+{
+"src": "images/work/45.webp",
+"cat": "coverup",
+"cat_en": "Cover Up",
+"cat_th": "สักทับ",
+"title_en": "Watercolour Bloom",
+"title_th": "ดอกไม้สีน้ำ"
+},
+{
+"src": "images/work/46.webp",
+"cat": "geometric",
+"cat_en": "Geometric",
+"cat_th": "เรขาคณิต",
+"title_en": "Celestial Panels",
+"title_th": "แผงจักรวาล"
+}
+];

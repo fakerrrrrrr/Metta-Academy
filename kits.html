@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="page-title" content="title_kits">
+<title>ชุดอุปกรณ์สัก · Metta Tattoo Academy</title>
+<meta name="description" content="ชุดอุปกรณ์สักสำหรับนักเรียน จากร้าน Metta Tattoo เชียงใหม่ ชุดเริ่มต้น ฿3,190 ชุดครบจบ ฿7,900 ส่งฟรี ชุดแม่สี 1 oz ฿1,500 สั่งทาง LINE">
+<meta property="og:title" content="ชุดอุปกรณ์สัก · Metta Tattoo Academy">
+<meta property="og:description" content="ชุดอุปกรณ์สักสำหรับนักเรียน จากร้าน Metta Tattoo เชียงใหม่ ชุดเริ่มต้น ฿3,190 ชุดครบจบ ฿7,900 ส่งฟรี ชุดแม่สี 1 oz ฿1,500 สั่งทาง LINE">
+<!-- Facebook/LINE preview. After the domain is live, change both image URLs to the full address, e.g. https://academy.mettatattoo.com/images/og.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="images/og.jpg">
+<link rel="icon" href="images/logo-cat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/academy.css">
+</head>
+<body data-page="kits">
+<div class="amb"></div>
+<header class="nav" id="nav"></header>
+
+<main>
+<section class="page-hero wrap">
+  <div class="eyebrow fade-up" data-i18n="kits_eyebrow"></div>
+  <h1 class="section-title fade-up d1" data-i18n-html="kits_title"></h1>
+  <p class="lede fade-up d2" data-i18n="kits_sub"></p>
+  <ul class="kit-pills fade-up d3"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="kits_pill1"></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="kits_pill2"></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="kits_pill3"></span></li></ul>
+</section>
+<section class="wrap" id="kitsSec">
+  <div class="kits" id="kitList"></div>
+  <div id="kitColours"></div>
+</section>
+
+<section class="wrap kit-sec">
+  <div class="eyebrow reveal" data-i18n="kits_cmp_eyebrow"></div>
+  <h2 class="section-title reveal d1" data-i18n-html="kits_cmp_h"></h2>
+  <div class="tbl-wrap reveal"><table class="kit-cmp" id="kitCmp"></table></div>
+</section>
+
+<section class="wrap kit-sec">
+  <div class="eyebrow reveal" data-i18n="kits_guide_eyebrow"></div>
+  <h2 class="section-title reveal d1" data-i18n-html="kits_guide_h"></h2>
+  <div class="kit-guide" id="kitGuide"></div>
+</section>
+
+<section class="wrap kit-sec" id="order">
+  <div class="kit-order reveal">
+    <div class="ko-main">
+      <div class="eyebrow" data-i18n="kits_order_eyebrow"></div>
+      <h2 class="section-title" data-i18n-html="kits_order_h"></h2>
+      <ol class="ko-steps"><li><b>1</b><span data-i18n="kits_order_s1"></span></li><li><b>2</b><span data-i18n="kits_order_s2"></span></li><li><b>3</b><span data-i18n="kits_order_s3"></span></li></ol>
+      <div class="ko-btns" id="koBtns"></div>
+    </div>
+    <div class="ko-qr" id="koQr" hidden><canvas id="lineQr" aria-label="LINE QR"></canvas><span data-i18n="kits_qr"></span><b id="lineId"></b></div>
+  </div>
+  <p class="kit-note reveal" data-i18n="kits_note"></p>
+</section>
+<section class="wrap next-wrap">
+  <a class="next-step reveal" href="course.html"><span class="ne" data-i18n="next_eyebrow"></span><b data-i18n="next_kits"></b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+</main>
+
+<footer id="footer"></footer>
+<div class="modal-bg" id="lightbox" hidden><div class="modal wide"><div class="modal-h"><h3 id="lbTitle"></h3><button class="modal-x" id="lbClose" aria-label="Close">&times;</button></div><div class="modal-b"><img class="zoom-img" id="lbImg" alt=""></div></div></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/access.js"></script>
+<script src="assets/js/course-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/kits-data.js"></script>
+<script src="assets/vendor/qr.js"></script>
+<script src="assets/js/promptpay.js"></script>
+<script src="assets/js/pages/site.js"></script>
+</body>
+</html>

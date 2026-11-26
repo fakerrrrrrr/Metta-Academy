@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="page-title" content="title_pricing">
+<title>ค่าเรียน · Metta Tattoo Academy</title>
+<meta name="description" content="จ่ายเต็ม ฿14,900 ดูได้ตลอดชีพ หรือผ่อน ฿1,800/เดือน 10 งวด เรียนจบสอบที่ร้าน สักได้จริง หรือคืนเงิน">
+<meta property="og:title" content="ค่าเรียน · Metta Tattoo Academy">
+<meta property="og:description" content="จ่ายเต็ม ฿14,900 ดูได้ตลอดชีพ หรือผ่อน ฿1,800/เดือน 10 งวด เรียนจบสอบที่ร้าน สักได้จริง หรือคืนเงิน">
+<!-- Facebook/LINE preview. After the domain is live, change both image URLs to the full address, e.g. https://academy.mettatattoo.com/images/og.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="images/og.jpg">
+<link rel="icon" href="images/logo-cat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/academy.css">
+</head>
+<body data-page="pricing">
+<div class="amb"></div>
+<header class="nav" id="nav"></header>
+
+<main>
+<section class="page-hero wrap">
+  <div class="eyebrow fade-up" data-i18n="price_eyebrow"></div>
+  <h1 class="section-title fade-up d1" data-i18n-html="price_title"></h1>
+  <p class="lede fade-up d2" data-i18n="price_sub"></p>
+  
+</section>
+<section class="wrap" id="pricing">
+  <div class="tracks-h reveal"><span data-i18n="tr_h"></span></div>
+  <div class="tracks reveal" role="tablist">
+    <button class="etrack on" role="tab" data-track="online" aria-selected="true">
+      <span class="tr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M10 8.5v4l3.5-2z"/><path d="M2 20h20"/></svg></span>
+      <span class="tr-t"><b data-i18n="tr_online"></b><span data-i18n="tr_online_d"></span></span><span class="tr-p" id="trOnlineP"></span>
+    </button>
+    <button class="etrack ecert" role="tab" data-track="cert" aria-selected="false">
+      <span class="tr-badge" data-i18n="tr_cert_badge"></span>
+      <span class="tr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M7 8.5h10M7 12h6"/><circle cx="16.5" cy="16.5" r="2.6"/><path d="M15.3 18.7l-.8 3 2-1 2 1-.8-3"/></svg></span>
+      <span class="tr-t"><b data-i18n="tr_cert"></b><span data-i18n="tr_cert_d"></span></span><span class="tr-p" id="trCertP"></span>
+    </button>
+  </div>
+  <div class="track-panel" id="trOnline">
+    <div class="plans" id="plans">
+    <div class="plan best reveal">
+      <span class="badge" data-i18n="plan_full_badge"></span>
+      <h3 data-i18n="plan_full"></h3>
+      <div class="price"><span class="gold" data-price="full"></span></div>
+      <div class="sub" data-i18n="plan_full_sub"></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_full_1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_full_2"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_full_3"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span id="planFullSave"></span></li>
+      </ul>
+      <a href="pay.html?item=full" class="btn btn-gold btn-block" data-i18n="plan_full_cta"></a>
+    </div>
+    <div class="plan reveal d1">
+      <h3 data-i18n="plan_inst"></h3>
+      <div class="price"><span data-price="inst"></span><small data-i18n="per_month"></small></div>
+      <div class="sub" id="planInstSub"></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_2"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_inst_3"></span></li>
+        <li class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span data-i18n="plan_inst_4"></span></li>
+      </ul>
+      <a href="pay.html?item=installment" class="btn btn-ghost btn-block" data-i18n="plan_inst_cta"></a>
+    </div>
+    <div class="plan reveal d2">
+      <h3 data-i18n="plan_single"></h3>
+      <div class="price" id="singlePrice"></div>
+      <div class="sub" data-i18n="plan_single_sub"></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_single_1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="plan_single_2"></span></li>
+        <li class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span data-i18n="plan_single_3"></span></li>
+      </ul>
+      <a href="course.html#special" class="btn btn-ghost btn-block" id="singleCta" data-i18n="plan_single_cta"></a>
+    </div>
+  </div>
+    <p class="center faint reveal" style="margin-top:1.6rem;font-size:.86rem" data-i18n-html="price_note"></p>
+    <a class="kit-line reveal" href="kits.html" id="kitLine" hidden></a>
+  </div>
+  <div class="track-panel" id="cert" hidden>
+    <div class="cert-intro">
+      <div>
+        <div class="eyebrow" data-i18n="ce_eyebrow"></div>
+        <h2 class="section-title" data-i18n-html="ce_title"></h2>
+        <p class="lede" data-i18n="ce_p"></p>
+        <ol class="ce-steps">
+          <li><b>1</b><span data-i18n="ce_s1"></span></li>
+          <li><b>2</b><span data-i18n="ce_s2"></span></li>
+          <li><b>3</b><span data-i18n="ce_s3"></span></li>
+        </ol>
+      </div>
+      <div class="certmock" aria-hidden="true"><div class="cm-in">
+      <img src="images/logo-cat.png" alt=""><small>METTA TATTOO ACADEMY</small>
+      <b>CERTIFICATE</b><i>Tattoo Artist</i><span class="cm-name"></span>
+      <span class="cm-foot"><span></span><span></span></span><span class="cm-seal"></span></div></div>
+    </div>
+    <div class="xpk" id="examPkgs"></div>
+    <div class="ce-gets">
+      <h3 data-i18n="ce_gets_h"></h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="ce_get1"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="ce_get2"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="ce_get3"></span></li>
+      </ul>
+    </div>
+    <p class="exam-model"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span data-i18n="exam_model"></span></p>
+  </div>
+</section>
+
+<section class="section-pad" id="how">
+  <div class="wrap">
+    <div class="eyebrow reveal" data-i18n="how_eyebrow"></div>
+    <h2 class="section-title reveal d1" data-i18n-html="how_title"></h2>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h4 data-i18n="how1_h"></h4><p data-i18n="how1_p"></p></div>
+      <div class="step reveal d1"><div class="n">02</div><h4 data-i18n="how2_h"></h4><p data-i18n="how2_p"></p></div>
+      <div class="step reveal d2"><div class="n">03</div><h4 data-i18n="how3_h"></h4><p data-i18n="how3_p"></p></div>
+      <div class="step reveal d3"><div class="n">04</div><h4 data-i18n="how4_h"></h4><p data-i18n="how4_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad alt-bg" id="guarantee">
+  <div class="wrap">
+    <div class="eyebrow reveal" data-i18n="gu_eyebrow"></div>
+    <h2 class="section-title reveal d1" data-i18n-html="gu_title"></h2>
+    <p class="lede reveal d2" data-i18n="gu_p"></p>
+    <div class="gu-steps">
+      <div class="gu reveal"><div class="n">1</div><h4 data-i18n="gu_s1_h"></h4><p data-i18n="gu_s1_p"></p></div>
+      <div class="gu reveal d1"><div class="n">2</div><h4 data-i18n="gu_s2_h"></h4><p data-i18n="gu_s2_p"></p></div>
+      <div class="gu reveal d2"><div class="n">3</div><h4 data-i18n="gu_s3_h"></h4><p data-i18n="gu_s3_p"></p></div>
+      <div class="gu reveal d3"><div class="n">4</div><h4 data-i18n="gu_s4_h"></h4><p data-i18n="gu_s4_p"></p></div>
+    </div>
+    <div class="center reveal" style="margin-top:1.6rem"><a class="btn btn-gold" href="#cert" data-open-cert><span data-i18n="ce_see_pk"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="gu-pro reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg><p data-i18n="gu_pro"></p><a class="btn btn-ghost btn-sm" id="examContact" target="_blank" rel="noopener" data-i18n="gu_book"></a></div>
+  </div>
+</section>
+<section class="wrap next-wrap">
+  <a class="next-step reveal" href="teacher.html"><span class="ne" data-i18n="next_eyebrow"></span><b data-i18n="next_teacher"></b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/access.js"></script>
+<script src="assets/js/course-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/kits-data.js"></script>
+<script src="assets/js/pages/site.js"></script>
+</body>
+</html>
